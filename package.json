@@ -1,5 +1,5 @@
 {
-  "name": "project-lvl1-s308",
+  "name": "sergeimakarovweb-308",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/SergeiMakarovWeb/project-lvl1-s308.git"
   },
-  "author": "",
+  "author": "sergeimakarovweb",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/SergeiMakarovWeb/project-lvl1-s308/issues"
