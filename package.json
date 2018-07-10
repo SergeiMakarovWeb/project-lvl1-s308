@@ -1,9 +1,9 @@
 {
   "name": "hexlet-project-sergeimakarovweb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "my first hexlet project brain games",
   "keywords": [
-    "brain-games", 
+    "brain-games",
     "hexlet"
   ],
   "scripts": {
@@ -26,7 +26,8 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "readline-sync": "^1.4.9"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
