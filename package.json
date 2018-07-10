@@ -1,8 +1,11 @@
 {
   "name": "hexlet-project-sergeimakarovweb",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "my first hexlet project brain games",
+  "keywords": [
+    "brain-games", 
+    "hexlet"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
