@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { getGamePlay } from '..';
+import getGamePlay from '..';
 
 getGamePlay();

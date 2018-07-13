@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { getGamePlay } from '..';
+import getGamePlay from '..';
 
 const getOperator = () => {
   let operator;
@@ -7,9 +7,9 @@ const getOperator = () => {
   if (randomNum === 1) {
     operator = '+';
   } else if (randomNum === 2) {
-    operator = '-'
+    operator = '-';
   } else {
-    operator = '*'
+    operator = '*';
   }
   return operator;
 };
@@ -17,11 +17,11 @@ const getOperator = () => {
 const makeOperation = (num1, num2, operator) => {
   if (operator === '*') {
     return num1 * num2;
-  } else if (operator === '-') {
-    return num1 - num2;
-  } else {
-    return num1 + num2;
   }
+  if (operator === '-') {
+    return num1 - num2;
+  }
+  return num1 + num2;
 };
 
 const getGameData = () => {
@@ -34,4 +34,6 @@ const getGameData = () => {
   return cons(question, answer);
 };
 
-export const startCalcGame = () => getGamePlay('What is the result of the expression?', 3, getGameData);
+export default () => {
+  getGamePlay('What is the result of the expression?', 3, getGameData);
+};

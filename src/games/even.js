@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { getGamePlay } from '..';
+import getGamePlay from '..';
 
 const isEven = (num) => {
   if ((num % 2) === 0) {
@@ -14,4 +14,6 @@ const getGameData = () => {
   return cons(question, answer);
 };
 
-export const startEvenGame = () => getGamePlay('Answer "yes" if number even otherwise answer "no".', 3, getGameData);
+export default () => {
+  getGamePlay('Answer "yes" if number even otherwise answer "no".', 3, getGameData);
+};
