@@ -1,6 +1,6 @@
 {
   "name": "hexlet-project-sergeimakarovweb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "my first hexlet project brain games",
   "keywords": [
     "brain-games",
@@ -34,7 +34,8 @@
     "babel-eslint": "^8.2.5"
   },
   "dependencies": {
-    "readline-sync": "^1.4.9"
+    "readline-sync": "^1.4.9",
+    "hexlet-pairs": "^1.0.5"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

@@ -1,22 +1,22 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
-const userName = readlineSync.question('May I have your name?');
-
-const greeting = () => console.log(`Hello, ${userName}!`);
-
-const evenGame = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * 101);
-    const isNumEven = number % 2 === 0 ? 'yes' : 'no';
-    console.log(`Question: ${number}`);
-    const userAnswer = readlineSync.question('Your answer? ');
-    if (userAnswer !== isNumEven) {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isNumEven}. Let's try again, ${userName}`);
-      return;
+export const getGamePlay = (gameName = '', attempts = 0, getGameData) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(gameName);
+  const userName = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${userName}!`);
+  for (let i = 0; i < attempts; i += 1) {
+    const gameData = getGameData();
+    const question = car(gameData);
+    const correctAnswer = cdr(gameData);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (correctAnswer !== userAnswer) {
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Let's try again, ${userName}!`);
     }
     console.log('Correct!');
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
-export { greeting, evenGame };
