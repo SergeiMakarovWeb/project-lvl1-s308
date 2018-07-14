@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import getGamePlay from '..';
-import { getRandomNum } from '../utils';
+import getRandomNum from '../utils';
 
 const getGcd = (num1, num2) => (num2 === 0 ? num1 : getGcd(num2, num1 % num2));
 

@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import getGamePlay from '..';
-import { getRandomNum } from '../utils';
+import getRandomNum from '../utils';
 
 const getBalancedNum = (num) => {
   const iter = (balancedStr, getNumSum, numDigits) => {
