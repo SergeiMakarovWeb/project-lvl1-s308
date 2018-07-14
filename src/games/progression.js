@@ -11,22 +11,22 @@ const lenghtProgression = 10;
 const getGameData = () => {
   const startNum = getRandomNum(startProgressionMin, startProgressionMax);
   const step = getRandomNum(stepProgressionMin, stepProgressionMax);
-  const emptyStep = getRandomNum(1, lenghtProgression);
-  const emptyNum = startNum + ((emptyStep - 1) * step);
+  const hiddenIndex = getRandomNum(1, lenghtProgression);
+  const hiddenElement = startNum + ((hiddenIndex - 1) * step);
 
-  const iter = (indx, seq) => {
-    if (indx > lenghtProgression) {
+  const iter = (index, seq) => {
+    if (index > lenghtProgression) {
       return seq;
     }
-    if (indx === emptyStep) {
-      return iter(indx + 1, `${seq} ..`);
+    if (index === hiddenIndex) {
+      return iter(index + 1, `${seq} ..`);
     }
-    return iter(indx + 1, `${seq} ${startNum + (step * (indx - 1))}`);
+    return iter(index + 1, `${seq} ${startNum + (step * (index - 1))}`);
   };
   const strProgression = iter(1, '');
-  const strEmptyNum = `${emptyNum}`;
+  const strhiddenElement = `${hiddenElement}`;
   const question = strProgression;
-  const answer = strEmptyNum;
+  const answer = strhiddenElement;
   return cons(question, answer);
 };
 

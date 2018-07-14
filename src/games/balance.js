@@ -2,36 +2,36 @@ import { cons } from 'hexlet-pairs';
 import getGamePlay from '..';
 import getRandomNum from '../utils';
 
+const calculateSum = (num) => {
+  let value = num;
+  let sum = 0;
+  while (value) {
+    sum += value % 10;
+    value = Math.floor(value / 10);
+  }
+  return sum;
+};
+
 const getBalancedNum = (num) => {
-  const iter = (balancedStr, getNumSum, numDigits) => {
-    if (numDigits === 0) {
-      return balancedStr;
+  const sum = calculateSum(num);
+  const lengthStr = String(num).length;
+  const average = Math.floor(sum / lengthStr);
+  const remainder = sum % lengthStr;
+  let balancedStr = '';
+  for (let i = 0; i < lengthStr; i += 1) {
+    if (i < remainder) {
+      balancedStr = `${balancedStr}${average + 1}`;
+    } else {
+      balancedStr = `${average}${balancedStr}`;
     }
-    const newNum = (getNumSum - (getNumSum % numDigits)) / numDigits;
-
-    return iter(balancedStr + newNum, getNumSum - newNum, numDigits - 1);
-  };
-
-  const getNumSum = (indx, numAcc) => {
-    const numToStr = String(num);
-
-    const strLength = numToStr.length;
-
-    if (indx >= strLength) {
-      return iter('', numAcc, strLength);
-    }
-
-    const position = Number(numToStr[indx]);
-
-    return getNumSum(indx + 1, numAcc + position);
-  };
-
-  return getNumSum(0, 0);
+  }
+  return balancedStr;
 };
 
 const getGameData = () => {
-  const question = getRandomNum();
-  const answer = getBalancedNum(question);
+  const numForQuestion = getRandomNum();
+  const question = `${numForQuestion}`;
+  const answer = getBalancedNum(numForQuestion);
   return cons(question, answer);
 };
 
