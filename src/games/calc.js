@@ -4,7 +4,7 @@ import { getRandomNum } from '../utils';
 
 const getOperator = () => {
   let operator;
-  const randomNum = getRandomNum();
+  const randomNum = Math.floor((Math.random() * 3) + 1);
   switch (randomNum) {
     case 1:
       operator = '+';
@@ -20,13 +20,14 @@ const getOperator = () => {
 };
 
 const makeOperation = (num1, num2, operator) => {
-  if (operator === '*') {
-    return num1 * num2;
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 * num2;
   }
-  if (operator === '-') {
-    return num1 - num2;
-  }
-  return num1 + num2;
 };
 
 const getGameData = () => {
