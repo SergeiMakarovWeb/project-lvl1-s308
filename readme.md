@@ -14,23 +14,23 @@ sudo npm install -g hexlet-project-sergeimakarovweb
 
 Start the game with the following commands:
 
-** Is even
+Is even
 ```
 brain-even
 ```
-** Calculator
+Calculator
 ```
 brain-calc
 ```
-** Progression
+Progression
 ```
 brain-progression
 ```
-** Greatest common divisor
+Greatest common divisor
 ```
 brain-gcd
 ```
-** Is Prime
+Is Prime
 ```
 brain-prime
 ```
