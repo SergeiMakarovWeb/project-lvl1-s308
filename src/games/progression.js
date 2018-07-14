@@ -1,4 +1,4 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import getGamePlay from '..';
 import getRandomNum from '../utils';
 
@@ -7,26 +7,6 @@ const startProgressionMax = 10;
 const stepProgressionMin = 1;
 const stepProgressionMax = 5;
 const lenghtProgression = 10;
-
-const getProgression = () => {
-  const startNum = getRandomNum(startProgressionMin, startProgressionMax);
-  const step = getRandomNum(stepProgressionMin, stepProgressionMax);
-  const emptyStep = getRandomNum(1, lenghtProgression);
-  const emptyNum = startNum + ((emptyStep - 1) * step);
-
-  const iter = (indx, seq) => {
-    if (indx > lenghtProgression) {
-      return seq;
-    } else if (indx === emptyStep) {
-      return iter(indx + 1, `${seq} ..`);
-    }
-    return iter(indx + 1, `${seq} ${startNum + (step * (indx - 1))}`);
-  };
-  const strProgression = iter(1, '');
-  const strEmptyNum = `${emptyNum}`
-  return cons(strProgression, strEmptyNum);
-};
-
 
 const getGameData = () => {
   const startNum = getRandomNum(startProgressionMin, startProgressionMax);
@@ -37,13 +17,14 @@ const getGameData = () => {
   const iter = (indx, seq) => {
     if (indx > lenghtProgression) {
       return seq;
-    } else if (indx === emptyStep) {
+    }
+    if (indx === emptyStep) {
       return iter(indx + 1, `${seq} ..`);
     }
     return iter(indx + 1, `${seq} ${startNum + (step * (indx - 1))}`);
   };
   const strProgression = iter(1, '');
-  const strEmptyNum = `${emptyNum}`
+  const strEmptyNum = `${emptyNum}`;
   const question = strProgression;
   const answer = strEmptyNum;
   return cons(question, answer);
