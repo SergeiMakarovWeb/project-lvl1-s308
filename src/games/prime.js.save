@@ -3,9 +3,6 @@ import getGamePlay from '..';
 import getRandomNum from '../utils';
 
 const isPrime = (number) => {
-  if (number < 2) {
-    return false;
-  }
   const iter = (divider) => {
     if (Math.sqrt(number) < divider) {
       return true;
